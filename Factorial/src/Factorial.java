@@ -9,7 +9,16 @@ public class Factorial {
         for (int i = 1; i <= number; i++){
             factorial *= i;
         }
-        System.out.println("The factorial of the number is " + factorial);
+        System.out.println("The factorial of the number with for loop is " + factorial);
+        while (factorial <= 1){
+            factorial *=number;
+        }
+        System.out.println("The factorial of the number with while loop is " + factorial);
+        int newNumber = 1;
+        do{
+            factorial *= newNumber;
+        }while (factorial < 1);
+        System.out.println("The factorial of the number with do-while loop is " + factorial);
         scanner.close();
     }
 }
