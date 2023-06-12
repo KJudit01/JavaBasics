@@ -9,7 +9,7 @@ public class FizzBuzz {
             number++;
         } while (!scan.hasNextInt());
         int newNumber = scan.nextInt();
-        for (int i = 0; i < newNumber + 1; i++) {
+        for (int i = 0; i <= newNumber; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 System.out.println("The input is valid: " + newNumber + "\n" + "FizzBuzz");
             } else if (i % 3 == 0) {
