@@ -3,11 +3,22 @@ import java.util.Scanner;
 public class FizzBuzz {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int number = scan.nextInt();
-        if (number <= 0) {
-            System.out.println("Give me a greater number than zero!");
-            System.err.println("Invalid number!");
-        }
+        boolean isInputValid = false;
+        int number = 0;
+        do{
+            if(scan.hasNextInt()){
+                number = scan.nextInt();
+                if(number > 1){
+                    isInputValid = true;
+                }else {
+                    System.err.println("Please enter a positive cardinal number.");
+                }
+            }else {
+                scan.next();
+                System.err.println("Please enter a positive cardinal number.");
+            }
+        }while (!isInputValid);
+        System.out.println("The given number is " + number);
         for (int i = 1; i <= number; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 System.out.println("FizzBuzz");
