@@ -5,19 +5,19 @@ public class FizzBuzz {
         Scanner scan = new Scanner(System.in);
         boolean isInputValid = false;
         int number = 0;
-        do{
-            if(scan.hasNextInt()){
+        do {
+            if (scan.hasNextInt()) {
                 number = scan.nextInt();
-                if(number > 1){
+                if (number > 1) {
                     isInputValid = true;
-                }else {
+                } else {
                     System.err.println("Please enter a positive cardinal number.");
                 }
-            }else {
+            } else {
                 scan.next();
                 System.err.println("Please enter a positive cardinal number.");
             }
-        }while (!isInputValid);
+        } while (!isInputValid);
         System.out.println("The given number is " + number);
         for (int i = 1; i <= number; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
