@@ -7,18 +7,21 @@ public class StrangePolynomialSum {
         if (n < 1) {
             System.err.println("Invalid number! Exit the program");
             System.exit(0);
-        }else {
-            int sum = 0;
+        } else {
+            long sum = 0;
             int index = 1;
 
             for (int i = 1; i < n; i++) {
-                sum += Math.pow(n, index);
+                sum += Math.pow(i + 1, index);
                 index++;
+
+                switch (index) {
+                    case 4 -> index = 1;
+
+                    default -> index++;
+                }
             }
-            if (index > 4) {
-                index = 1;
-            }
-            System.out.println("The sum of the strange polynomal is " + sum);
+            System.out.println("The sum of the strange polynomial is " + sum);
             scan.close();
         }
     }
