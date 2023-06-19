@@ -32,7 +32,7 @@ public class MultiplicationTable {
             System.out.println();
             int result = 0;
             result = number * i;
-            if (result < 10) {
+            if (result < number) {
                 System.out.println(result + " " + "\n" + separator);
             } else {
                 System.out.println(result + " " + "\n" + separator);

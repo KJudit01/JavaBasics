@@ -11,19 +11,20 @@ public class StrangePolynomialSum {
             long sum = 0;
             int index = 1;
 
-            for (int i = 1; i < n; i++) {
+            for (int i = 0; i < n; i++) {
+                System.out.printf("Calculating %d^%d and adding it to %d%n ", i + 1, index, sum);
                 sum += Math.pow(i + 1, index);
                 index++;
 
                 switch (index) {
-                    case 4 -> index = 1;
-
-                    default -> index++;
+                    case 5 -> index = 1;
                 }
             }
             System.out.println("The sum of the strange polynomial is " + sum);
             scan.close();
         }
+
+
     }
 }
 
