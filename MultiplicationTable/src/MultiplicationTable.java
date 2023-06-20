@@ -28,15 +28,11 @@ public class MultiplicationTable {
         }
 
         String separator = "-------------------------";
-        for (int i = 1; i <= 10; i++) {
-            System.out.println();
-            int result = 0;
-            result = number * i;
-            if (result < number) {
-                System.out.println(result + " " + "\n" + separator);
-            } else {
-                System.out.println(result + " " + "\n" + separator);
+        for (int i = 1; i <= 55; i++) {
+            for (int j = 1; j <55; j++) {
+                System.out.printf("%5d ",i*j);
             }
+            System.out.println();
         }
         sc.close();
     }

@@ -7,6 +7,12 @@ public class HeavenlyNumber {
         System.out.print("The number is: ");
         int number = sc.nextInt();
         boolean isHeavenly = false;
+        int counter = 0;
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                counter = counter +1;
+            }
+        }
         if (number < 100 && number % 2 == 0 && number % 7 != 0) {
             isHeavenly = true;
         }
