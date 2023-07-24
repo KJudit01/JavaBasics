@@ -7,30 +7,37 @@ public class SquareNumberLister {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int attempt = 0;
-        int number = 0;
-        while (attempt < 5) {
+        int invalidInputCount = 0;
+        int maxInvalidInputAttempts = 5;
+        while (invalidInputCount < maxInvalidInputAttempts) {
+            System.out.print("Please give me a number between 2 and 2_000_000_000: ");
+            String input = scanner.nextLine();
             try {
-                System.out.print("Give me a number: ");
-                number = scanner.nextInt();
-                squareNumber(number);
-                break;
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid input! Try again.");
-                scanner.nextLine();
-                attempt++;
+                int number = Integer.parseInt(input);
+                if (isValidNumber(number)) {
+                    listSquareNumbers(number);
+                    return;
+                } else {
+                    System.out.println("Invalid input!");
+                    invalidInputCount++;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input!");
+                invalidInputCount++;
             }
         }
-        if (attempt == 5) {
-            System.err.println("Exiting ...");
-        }
+        System.err.println("You have given invalid input five times. Exiting.. ");
         scanner.close();
     }
 
-    public static void squareNumber(int number) {
-        for (int i = 0; i <= number; i++) {
-            if (number >= 2 && number <= 2_000_000_000)
-                System.out.println(i * i);
+    private static boolean isValidNumber(int number) {
+        return number >= 2 && number <= 2_000_000_000;
+    }
+
+    private static void listSquareNumbers(int number) {
+        for (int i = 1; i <= number; i++) {
+            System.out.println(i * i);
         }
     }
 }
+
