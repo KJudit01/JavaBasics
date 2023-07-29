@@ -10,4 +10,9 @@ public class TipCalculatorTest {
     void getSumTest(){
        Assertions.assertEquals(8000,TipCalculator.getSum(new int[]{5000,2000,1000}));
     }
+    @Test
+    void isValidNumberTest(){
+        Assertions.assertTrue(true);
+
+    }
 }

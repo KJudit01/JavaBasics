@@ -22,7 +22,7 @@ public class TipCalculator {
         return sum;
     }
 
-    private static boolean isValidNumber(int number) {
+    static boolean isValidNumber(int number) {
         if (number >= 10 && number <= 80) {
             return true;
         } else {
