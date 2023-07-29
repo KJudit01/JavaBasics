@@ -35,8 +35,11 @@ public class SquareNumberLister {
     }
 
     private static void listSquareNumbers(int number) {
-        for (int i = 1; i <= number; i++) {
-            System.out.println(i * i);
+        int limit = (int) Math.sqrt(number);
+        for (int i = 1; i <= limit; i++) {
+            int square;
+            square = i * i;
+            System.out.println(square);
         }
     }
 }
