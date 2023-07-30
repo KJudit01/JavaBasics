@@ -5,6 +5,7 @@ public class TipCalculatorTest {
     @Test
     void calculateTipTest(){
         Assertions.assertEquals(400,TipCalculator.calculateTip(new int[]{2000},20));
+        Assertions.assertEquals(25, TipCalculator.calculateTip(new int[]{250},10));
     }
     @Test
     void getSumTest(){
@@ -13,6 +14,5 @@ public class TipCalculatorTest {
     @Test
     void isValidNumberTest(){
         Assertions.assertTrue(true);
-
     }
 }

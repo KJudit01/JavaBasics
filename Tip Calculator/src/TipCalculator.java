@@ -3,6 +3,9 @@ public class TipCalculator {
         int[] prices = {2000, 250, 300, 50, 250};
         System.out.println(calculateTip(prices, 20));
         System.out.println(calculateTip(prices, 1));
+        System.out.println(calculateTip(prices, 10));
+        System.out.println(calculateTip(prices, 80));
+        System.out.println(calculateTip(prices, 16));
     }
 
     static int calculateTip(int[] prices, int percentage) {
@@ -14,10 +17,10 @@ public class TipCalculator {
         }
     }
 
-     static int getSum(int[] prices) {
+    static int getSum(int[] prices) {
         int sum = 0;
-        for (int i = 0; i <= prices.length - 1; i++) {
-            sum += prices[i];
+        for (int element : prices) {
+            sum += element;
         }
         return sum;
     }
@@ -25,8 +28,7 @@ public class TipCalculator {
     static boolean isValidNumber(int number) {
         if (number >= 10 && number <= 80) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 }
