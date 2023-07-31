@@ -119,7 +119,7 @@ public class Calculator {
         return num1 * num2;
     }
 
-    static double getDivision(int num1, int num2) {
+    static double getDivision(double num1, double num2) {
         return num1 / num2;
     }
 
