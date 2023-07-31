@@ -26,6 +26,7 @@ public class CalculatorTest {
     @Test
     void testModularDivision() {
         Assertions.assertEquals(0, Calculator.getModularDivision(25, 5));
+        Assertions.assertEquals(21,Calculator.getModularDivision(51,30));
     }
 
     @Test
