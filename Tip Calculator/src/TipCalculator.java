@@ -26,9 +26,6 @@ public class TipCalculator {
     }
 
     static boolean isValidNumber(int number) {
-        if (number >= 10 && number <= 80) {
-            return true;
-        }
-        return false;
+        return number >= 10 && number <= 80;
     }
 }

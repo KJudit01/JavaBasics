@@ -9,10 +9,14 @@ public class TipCalculatorTest {
     }
     @Test
     void getSumTest(){
-       Assertions.assertEquals(8000,TipCalculator.getSum(new int[]{5000,2000,1000}));
+
+        Assertions.assertEquals(8000,TipCalculator.getSum(new int[]{5000,2000,1000}));
+        Assertions.assertEquals(5000,TipCalculator.getSum(new int[]{2000,1000,2000}));
     }
     @Test
     void isValidNumberTest(){
-        Assertions.assertTrue(true);
+        Assertions.assertTrue(TipCalculator.isValidNumber(10));
+        Assertions.assertTrue(TipCalculator.isValidNumber(80));
+        Assertions.assertFalse(TipCalculator.isValidNumber(100));
     }
 }
