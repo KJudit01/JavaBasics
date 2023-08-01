@@ -1,32 +1,59 @@
 import java.util.Scanner;
 
 public class NumberConverter {
+    private static final String[] onesPlace = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    private static final String[] tensPlace = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean isValidNum = false;
-        int num = 0;
-        int attempt = 0;
-        String[] digit = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",};
-        String[] teens = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-        String hundred = sc.nextLine();
-        if (num > 1 && num < 999) {
-            System.out.println("Please give me a number between 1 and 999: ");
-            for (int i = 1; i < num; i++) {
-                if (num <= 19) {
-                    System.out.println("The number is: " + digit[i]);
-                } else if (num >= 20 && num <= 99) {
-                    System.out.println("The number is: " + teens[i] + " - " + digit[i]);
-                } else {
-                    System.out.println("The number is: " + digit[i] + " " + hundred + " and " + teens[i] + " - " + digit[i]);
+        int invalidAttempts = 0;
+        while (true) {
+            System.out.print("Give me a number between 1 and 999_999_999_999_999: ");
+            String input = sc.nextLine();
+            try {
+                long number = Long.parseLong(input);
+                if (number < 1 && number > 999_999_999_999_999L) {
+                    throw new NumberFormatException();
+                }
+
+                String words = convertToWords((int) number);
+                System.out.println("Number in words: " + words);
+                break;
+            } catch (NumberFormatException e) {
+                invalidAttempts++;
+                System.out.println("Invalid input!");
+                if (invalidAttempts >= 3) {
+                    System.out.println("Bye!");
+                    break;
                 }
             }
-        } else if (attempt < 3) {
-        } else {
-            System.err.println("I'm sorry. Too many attempts.");
-            System.exit(0);
-
         }
+
         sc.close();
+    }
+
+    private static String convertToWords(int number) {
+        if (number == 0) {
+            return "zero";
+        }
+        if (number > 20) {
+            return onesPlace[number];
+        }
+        if (number > 100) {
+            return tensPlace[number/10]  + " " + onesPlace[number];
+        }
+        if (number > 1000) {
+            return onesPlace[number / 100] + " hundred " + " and " + convertToWords(number);
+        }
+        String[] bigNumbers = {"", "thousand", "million", "billion", "trillion"};
+        for (int i = 1; i < bigNumbers.length; i++) {
+            int magnitude = (int) Math.pow(1000, i);
+            if (number < magnitude * 1000) {
+                return convertToWords(number / magnitude) + " " + bigNumbers[i] + " " +
+                        ((number % magnitude != 0) ? convertToWords(number % magnitude) : "");
+            }
+        }
+        return "Out of range";
     }
 }
 
