@@ -36,17 +36,17 @@ public class NumberConverter {
         if (number == 0) {
             return "zero";
         }
-        if (number > 20) {
+        if (number < 20) {
             return onesPlace[number];
         }
-        if (number > 100) {
-            return tensPlace[number/10]  + " " + onesPlace[number];
+        if (number < 100) {
+            return tensPlace[number / 10] + " " + onesPlace[number];
         }
-        if (number > 1000) {
+        if (number < 1000) {
             return onesPlace[number / 100] + " hundred " + " and " + convertToWords(number);
         }
         String[] bigNumbers = {"", "thousand", "million", "billion", "trillion"};
-        for (int i = 1; i < bigNumbers.length; i++) {
+        for (int i = 1; i <= bigNumbers.length; i++) {
             int magnitude = (int) Math.pow(1000, i);
             if (number < magnitude * 1000) {
                 return convertToWords(number / magnitude) + " " + bigNumbers[i] + " " +
