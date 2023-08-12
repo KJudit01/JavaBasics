@@ -1,4 +1,4 @@
-public class RecamanSequenceWithRecursive {
+public class RecamanWithRecursive {
     public static void generateRecamanSequence(int n) {
         int[] sequence = new int[n];
         generateRecamanSequenceRecursive(sequence, n - 1);
