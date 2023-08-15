@@ -1,59 +1,84 @@
 import java.util.Scanner;
 
 public class NumberConverter {
-    private static final String[] onesPlace = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-    private static final String[] tensPlace = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    private static final String[] UNITS = {
+            "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+            "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+            "seventeen", "eighteen", "nineteen"
+    };
+
+    private static final String[] TENS = {
+            "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
+    };
+
+    private static final String[] THOUSANDS = {
+            "", "thousand", "million", "billion", "trillion"
+    };
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int invalidAttempts = 0;
-        while (true) {
-            System.out.print("Give me a number between 1 and 999_999_999_999_999: ");
-            String input = sc.nextLine();
-            try {
-                long number = Long.parseLong(input);
-                if (number < 1 && number > 999_999_999_999_999L) {
-                    throw new NumberFormatException();
-                }
+        Scanner scanner = new Scanner(System.in);
+        int attempt = 0;
+        long number = 0;
 
-                String words = convertToWords((int) number);
-                System.out.println("Number in words: " + words);
-                break;
-            } catch (NumberFormatException e) {
-                invalidAttempts++;
-                System.out.println("Invalid input!");
-                if (invalidAttempts >= 3) {
-                    System.out.println("Bye!");
+        while (attempt < 3) {
+            System.out.print("Enter a number between 1 and 999,999,999,999,999: ");
+            String input = scanner.nextLine();
+
+            try {
+                number = Long.parseLong(input);
+                if (number >= 1 && number <= 999_999_999_999_999L) {
                     break;
+                } else {
+                    System.out.println("Invalid input. Please enter a number between 1 and 999,999,999,999,999.");
                 }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
             }
+
+            attempt++;
         }
 
-        sc.close();
+        if (attempt < 3) {
+            String words = convertToWords(number);
+            System.out.println("In words: " + words);
+        } else {
+            System.out.println("Bye!");
+        }
     }
 
-    private static String convertToWords(int number) {
+    private static String convertToWords(long number) {
         if (number == 0) {
             return "zero";
         }
-        if (number < 20) {
-            return onesPlace[number];
-        }
-        if (number < 100) {
-            return tensPlace[number / 10] + " " + onesPlace[number];
-        }
-        if (number < 1000) {
-            return onesPlace[number / 100] + " hundred " + " and " + convertToWords(number);
-        }
-        String[] bigNumbers = {"", "thousand", "million", "billion", "trillion"};
-        for (int i = 1; i <= bigNumbers.length; i++) {
-            int magnitude = (int) Math.pow(1000, i);
-            if (number < magnitude * 1000) {
-                return convertToWords(number / magnitude) + " " + bigNumbers[i] + " " +
-                        ((number % magnitude != 0) ? convertToWords(number % magnitude) : "");
+
+        String words = "";
+        int thousandsIndex = 0;
+
+        while (number > 0) {
+            if (number % 1000 != 0) {
+                words = convertChunkToWords((int) (number % 1000)) + " " + THOUSANDS[thousandsIndex] + " " + words;
             }
+            number /= 1000;
+            thousandsIndex++;
         }
-        return "Out of range";
+
+        return words.trim();
+    }
+
+    private static String convertChunkToWords(int number) {
+        if (number == 0) {
+            return "";
+        }
+
+        if (number < 20) {
+            return UNITS[number];
+        }
+
+        if (number < 100) {
+            return TENS[number / 10] + " " + convertChunkToWords(number % 10);
+        }
+
+        return UNITS[number / 100] + " hundred " + convertChunkToWords(number % 100);
     }
 }
 
