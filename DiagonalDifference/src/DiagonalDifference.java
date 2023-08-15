@@ -20,6 +20,15 @@ public class DiagonalDifference {
                 {4,4,8,8},
         };
         System.out.println(calculateDiagonalDifference(matrix3));
+        int[][] matrix4 = {
+                {7,8,9,1,9,7},
+                {2,4,3,2,3,7},
+                {1,0,0,9,9,9},
+                {3,4,5,6,7,8},
+                {5,5,5,6,8,8},
+                {4,7,7,7,8,9}
+        };
+        System.out.println(calculateDiagonalDifference(matrix4));
     }
 
     static int calculateDiagonalDifference(int[][] matrix) {
