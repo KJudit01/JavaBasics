@@ -13,7 +13,7 @@ public class StringSmallExercise {
         System.out.println(getHelloOccurance(myString5));
     }
 
-    private static int getHelloOccurance(String input) {
+    static int getHelloOccurance(String input) {
         int counter = 0;
         int index = input.indexOf("hello");
         while (index != -1) {
@@ -23,7 +23,7 @@ public class StringSmallExercise {
         return counter;
     }
 
-    private static int getOccuranceOfBs(String input) {
+    static int getOccuranceOfBs(String input) {
         int counter = 0;
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) == 'B') {
