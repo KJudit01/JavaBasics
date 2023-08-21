@@ -75,10 +75,10 @@ public class NumberConverter {
         }
 
         if (number < 100) {
-            return TENS[number / 10] + " " + convertChunkToWords(number % 10);
+            return TENS[number / 10] + (number % 10 != 0 ? "-" + UNITS[number % 10] : "");
         }
 
-        return UNITS[number / 100] + " hundred " + convertChunkToWords(number % 100);
+        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? "and " + convertChunkToWords(number % 100) : "");
     }
 }
 
