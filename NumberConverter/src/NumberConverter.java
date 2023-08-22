@@ -14,13 +14,16 @@ public class NumberConverter {
     private static final String[] THOUSANDS = {
             "", "thousand", "million", "billion", "trillion"
     };
+    private static final String HYPHEN = "-";
+    private static final String LINKER = "and";
+    private static final String SPACE = " ";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int attempt = 0;
+        int attempts = 0;
         long number = 0;
 
-        while (attempt < 3) {
+        while (attempts < 3) {
             System.out.print("Enter a number between 1 and 999,999,999,999,999: ");
             String input = scanner.nextLine();
 
@@ -35,10 +38,10 @@ public class NumberConverter {
                 System.out.println("Invalid input. Please enter a valid number.");
             }
 
-            attempt++;
+            attempts++;
         }
 
-        if (attempt < 3) {
+        if (attempts < 3) {
             String words = convertToWords(number);
             System.out.println("In words: " + words);
         } else {
@@ -46,17 +49,13 @@ public class NumberConverter {
         }
     }
 
-    private static String convertToWords(long number) {
-        if (number == 0) {
-            return "zero";
-        }
-
+    static String convertToWords(long number) {
         String words = "";
         int thousandsIndex = 0;
 
         while (number > 0) {
             if (number % 1000 != 0) {
-                words = convertChunkToWords((int) (number % 1000)) + " " + THOUSANDS[thousandsIndex] + " " + words;
+                words = convertChunkToWords((int) (number % 1000)) + SPACE + THOUSANDS[thousandsIndex] + SPACE + words;
             }
             number /= 1000;
             thousandsIndex++;
@@ -66,19 +65,15 @@ public class NumberConverter {
     }
 
     private static String convertChunkToWords(int number) {
-        if (number == 0) {
-            return "";
-        }
-
         if (number < 20) {
             return UNITS[number];
         }
 
         if (number < 100) {
-            return TENS[number / 10] + (number % 10 != 0 ? "-" + UNITS[number % 10] : "");
+            return TENS[number / 10] + (number % 10 != 0 ? HYPHEN + UNITS[number % 10] : SPACE);
         }
 
-        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? "and " + convertChunkToWords(number % 100) : "");
+        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? LINKER + SPACE + convertChunkToWords(number % 100) : SPACE);
     }
 }
 
