@@ -47,6 +47,7 @@ public class NumberConverter {
         } else {
             System.out.println("Bye!");
         }
+        scanner.close();
     }
 
     static String convertToWords(long number) {
@@ -55,7 +56,7 @@ public class NumberConverter {
 
         while (number > 0) {
             if (number % 1000 != 0) {
-                words = convertChunkToWords((int) (number % 1000)) + SPACE + THOUSANDS[thousandsIndex] + SPACE + words;
+                words = convertChunkToWords((int) (number % 1000)) + SPACE + THOUSANDS[thousandsIndex] + "";
             }
             number /= 1000;
             thousandsIndex++;
@@ -64,16 +65,16 @@ public class NumberConverter {
         return words.trim();
     }
 
-    private static String convertChunkToWords(int number) {
+    static String convertChunkToWords(int number) {
         if (number < 20) {
             return UNITS[number];
         }
 
         if (number < 100) {
-            return TENS[number / 10] + (number % 10 != 0 ? HYPHEN + UNITS[number % 10] : SPACE);
+            return TENS[number / 10] + (number % 10 != 0 ? HYPHEN + UNITS[number % 10] : "");
         }
 
-        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? LINKER + SPACE + convertChunkToWords(number % 100) : SPACE);
+        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? SPACE + LINKER + SPACE + convertChunkToWords(number % 100) : "");
     }
 }
 
