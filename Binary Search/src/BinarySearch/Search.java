@@ -33,6 +33,12 @@ public class Search {
             }
         }
         return -1;
+        //fogom az intervallum felét
+        //megnézem, hogy a keresendő szám egyenlő-e ezzel az értékkel
+        //ha igen, visszatérek az indexszel
+        //megnézem, hogy a keresendő szám nagyobb-e vagy kisebb-e ennél
+        //ha nagyobb, akkor a számtól jobbra lévő számokkal megcsinálom ugyanezt
+        //ha már csak 1 méretű a tömböm, és az az elem nem egyezik meg a keresendővel, akkor visszatérek -1-gyel
     }
 
     public int binarySearch(int[] array, int number, int offset) {
