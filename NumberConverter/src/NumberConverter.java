@@ -56,7 +56,7 @@ public class NumberConverter {
 
         while (number > 0) {
             if (number % 1000 != 0) {
-                words = convertChunkToWords((int) (number % 1000)) + SPACE + THOUSANDS[thousandsIndex] + "";
+                words = convertChunkToWords((int) (number % 1000)) + " " + THOUSANDS[thousandsIndex] + "";
             }
             number /= 1000;
             thousandsIndex++;
@@ -74,7 +74,7 @@ public class NumberConverter {
             return TENS[number / 10] + (number % 10 != 0 ? HYPHEN + UNITS[number % 10] : "");
         }
 
-        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? SPACE + LINKER + SPACE + convertChunkToWords(number % 100) : "");
+        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? " " + LINKER + " " + convertChunkToWords(number % 100) : "");
     }
 }
 
