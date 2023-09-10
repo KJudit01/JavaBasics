@@ -16,7 +16,6 @@ public class NumberConverter {
     };
     private static final String HYPHEN = "-";
     private static final String LINKER = "and";
-    private static final String SPACE = " ";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -56,7 +55,7 @@ public class NumberConverter {
 
         while (number > 0) {
             if (number % 1000 != 0) {
-                words = convertChunkToWords((int) (number % 1000)) + " " + THOUSANDS[thousandsIndex] + "";
+                words = convertChunkToWords((int) (number % 1000)) + "" + THOUSANDS[thousandsIndex] + "" + words;
             }
             number /= 1000;
             thousandsIndex++;
@@ -71,10 +70,10 @@ public class NumberConverter {
         }
 
         if (number < 100) {
-            return TENS[number / 10] + (number % 10 != 0 ? HYPHEN + UNITS[number % 10] : "");
+            return TENS[number / 10] + (number % 10 != 0 ? HYPHEN + UNITS[number % 10] : " ");
         }
 
-        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? " " + LINKER + " " + convertChunkToWords(number % 100) : "");
+        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? " " + LINKER + " " + convertChunkToWords(number % 100) : " ");
     }
 }
 

@@ -7,7 +7,7 @@ public class Search {
 
     }
 
-    public int search(int[] array, int number) {
+    int search(int[] array, int number) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == number) {
                 return i;
@@ -16,12 +16,12 @@ public class Search {
         return -1;
     }
 
-    public int binarySearch(int[] array, int number) {
+    int binarySearch(int[] array, int number) {
         Arrays.sort(array);
         return binarySearch(array, number, 0, array.length - 1);
     }
 
-    private static int binarySearch(int[] array, int number, int left, int right) {
+    int binarySearch(int[] array, int number, int left, int right) {
         if (left <= right) {
             int middle = left + (right - left) / 2;
             if (array[middle] == number) {
@@ -41,7 +41,7 @@ public class Search {
         //ha már csak 1 méretű a tömböm, és az az elem nem egyezik meg a keresendővel, akkor visszatérek -1-gyel
     }
 
-    public int binarySearch(int[] array, int number, int offset) {
+     /*int binarySearch(int[] array, int number, int offset) {
         int middleElement = array[array.length / 2];
         if (number == middleElement) {
             return offset + array.length / 2;
@@ -51,7 +51,7 @@ public class Search {
             return binarySearch(Arrays.copyOfRange(array, array.length / 2 + 1, array.length), number, offset + array.length / 2);
         } else {    //if(number < middleElement)//
             return binarySearch(Arrays.copyOfRange(array, 0, array.length / 2), number, offset);
-        }
-    }
+        }*/
 }
+
 
