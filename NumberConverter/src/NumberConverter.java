@@ -50,12 +50,12 @@ public class NumberConverter {
     }
 
     static String convertToWords(long number) {
-        String words = "";
+        String words = " ";
         int thousandsIndex = 0;
 
         while (number > 0) {
             if (number % 1000 != 0) {
-                words = convertChunkToWords((int) (number % 1000)) + "" + THOUSANDS[thousandsIndex] + "" + words;
+                words = convertChunkToWords((int) (number % 1000)) + " " + THOUSANDS[thousandsIndex] + " " + words.trim();
             }
             number /= 1000;
             thousandsIndex++;
