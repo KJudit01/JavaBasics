@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9e79e8ab-d847-4e32-89b8-829cb4c64f9d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binary Search.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Binary Search/BinarySearch/BinarySearchTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Binary Search/BinarySearch/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Binary Search/BinarySearch/Search.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BinarySearch/BinarySearchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BinarySearch/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BinarySearch/Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/Occupations.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/out/production/Occupations/Occupations/Chef.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/out/production/Occupations/Occupations/Gender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/out/production/Occupations/Occupations/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/out/production/Occupations/Occupations/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/src/Occupations/Chef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/src/Occupations/Gender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/src/Occupations/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Occupations/src/Occupations/Person.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2UlGe6iFDItv7VYyEO9aFGH1Ziu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="JUnit.BinarySearchTest.binarySearchTest">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BinarySearch.Main" />
+      <module name="Binary Search" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BinarySearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinarySearchTest.binarySearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Binary Search" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BinarySearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BinarySearch" />
+      <option name="MAIN_CLASS_NAME" value="BinarySearch.BinarySearchTest" />
+      <option name="METHOD_NAME" value="binarySearchTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BinarySearchTest.binarySearchTest" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e79e8ab-d847-4e32-89b8-829cb4c64f9d" name="Changes" comment="" />
+      <created>1693506846728</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693506846728</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
