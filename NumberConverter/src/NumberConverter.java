@@ -55,12 +55,16 @@ public class NumberConverter {
 
         while (number > 0) {
             if (number % 1000 != 0) {
-                words = convertChunkToWords((int) (number % 1000)) + " " + THOUSANDS[thousandsIndex] + " " + words.trim();
+                String chunkWords = convertChunkToWords((int) (number % 1000));
+                if (!chunkWords.isEmpty() && !words.isEmpty()) {
+                    words = chunkWords + " " + THOUSANDS[thousandsIndex] + " " + words;
+                } else {
+                    words = chunkWords + THOUSANDS[thousandsIndex] + " " + words;
+                }
             }
             number /= 1000;
             thousandsIndex++;
         }
-
         return words.trim();
     }
 
@@ -70,10 +74,18 @@ public class NumberConverter {
         }
 
         if (number < 100) {
-            return TENS[number / 10] + (number % 10 != 0 ? HYPHEN + UNITS[number % 10] : " ");
+            String result = TENS[number / 10];
+            if (number % 10 != 0) {
+                result += HYPHEN + UNITS[number % 10];
+            }
+            return result;
         }
 
-        return UNITS[number / 100] + " hundred " + (number % 100 != 0 ? " " + LINKER + " " + convertChunkToWords(number % 100) : " ");
+        String result = UNITS[number / 100] + " hundred";
+        if (number % 100 != 0) {
+            result += LINKER + " " + convertChunkToWords(number % 100);
+        }
+        return result;
     }
 }
 

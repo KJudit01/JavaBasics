@@ -15,6 +15,11 @@ public class NumberConverterTest {
         Assertions.assertEquals("nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine",NumberConverter.convertToWords(999999999));
         Assertions.assertEquals("nine hundred and ninety-nine billion nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine",NumberConverter.convertToWords(999999999999L));
         Assertions.assertEquals("nine hundred and ninety-nine trillion nine hundred and ninety-nine billion nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine",NumberConverter.convertToWords(999999999999999L));
+
+    }
+    @Test
+    void hundredThousandTest(){
         Assertions.assertEquals("one hundred thousand",NumberConverter.convertToWords(100000));
+        Assertions.assertEquals("one hundred thousand one",NumberConverter.convertToWords(100001));
     }
 }
